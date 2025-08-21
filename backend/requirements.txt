@@ -1,0 +1,15 @@
+fastapi 
+uvicorn[standard] 
+python-multipart
+pandas 
+numpy 
+scipy 
+scikit-learn 
+matplotlib
+seaborn
+reportlab
+pillow
+xlsxwriter
+orjson
+python-dotenv
+pytest
