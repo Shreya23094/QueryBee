@@ -1,9 +1,21 @@
-#demo code
-
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+# Allow frontend to connect
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],   # in production, restrict this
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 @app.get("/")
-def root():
-    return {"message": "Hello, API is running!"}
+def read_root():
+    return {"message": "Backend is running 🚀"}
+
+@app.get("/ping")
+def ping():
+    return {"status": "ok", "msg": "Hello from FastAPI!"}
